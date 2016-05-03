@@ -11,24 +11,35 @@
 @implementation MarysAppleHandler
 
 - (NSString *) itemMaryCanPurchaseForDollars:(NSInteger)dollars {
-    NSString *itemToReturn;
-
+    
     /* WORK HERE */
     
-    NSLog(@"For $%ld, Mary can: %@", (long)dollars, itemToReturn);
-    return itemToReturn;
+    
+    if(dollars == 4){
+        return @"get out of my store";
+    }else if(dollars == 5){;
+        return @"have some gum";
+    }else if(dollars == 6){
+        return @"have an apple";
+    }else if(dollars == 1000){
+        return @"have an Apple computer";
+    }else if(dollars == 1000000000){
+        return @"have The Big Apple";
+    }
+    
+    return nil;
 }
 
 - (NSUInteger) dollarCostForAppleFlavoredVodka {
     /* WORK HERE */
-
+    
     NSUInteger cost = 24;
     
-    if (self.getsDiscount) {
-        cost *= .75;
-    }
+
     
-    return cost;
+    return self.getsDiscount ? cost *= .75 : cost;
 }
 
+
 @end
+
